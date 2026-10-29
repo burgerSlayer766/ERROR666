@@ -1,0 +1,145 @@
+# Это файл .gitignore для проектов Unreal Engine 5
+# Должен размещаться в корневой директории проекта
+
+# ========================================
+# Сгенерированные и временные папки Unreal
+# ========================================
+/Intermediate/
+/Binaries/
+/Build/
+/Saved/
+/DerivedDataCache/
+/Platforms/
+/ManifestNonUFSFiles.txt
+
+# ========================================
+# Конфигурационные файлы IDE
+# ========================================
+.vs/
+.vscode/
+/.idea/
+/.vscode/
+*.sln
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.xcodeproj/
+*.xcworkspace/
+*.csproj
+*.userprefs
+
+# ========================================
+# Логи и временные файлы
+# ========================================
+/*.log
+/*.tmp
+/*.temp
+/CrashReportClient/
+/CrashReportClientUE4/
+/CrashReportClientUE5/
+/crashlytics-*
+
+# ========================================
+# Сгенерированные файлы ассетов (не трогаем сами .uasset/.umap)
+# ========================================
+/Content/*.uexp
+/Content/*.ubulk
+/Content/*.uptnl
+/Content/*.m.ubulk
+/Content/*.o.ubulk
+/Content/*.ucas
+/Content/*.utoc
+/Content/*.pak
+
+# ========================================
+# Настройки проекта (кроме Default*)
+# ========================================
+/Config/Local/
+/Config/UE4Editor*.ini
+/Config/UE5Editor*.ini
+/Config/User*.ini
+/Config/DeviceProfiles/*.ini
+/Config/Android/*.ini
+/Config/IOS/*.ini
+
+# ========================================
+# Бинарные файлы и библиотеки
+# ========================================
+/*.pdb
+/*.ilk
+/*.exp
+/*.lib
+/*.dll
+/*.exe
+/*.dylib
+/*.so
+/*.a
+/*.exe.config
+/*.dll.config
+
+# ========================================
+# Платформозависимые сборки
+# ========================================
+/Intermediate/Android/
+/Intermediate/IOS/
+/Intermediate/PS4/
+/Intermediate/XboxOne/
+/Intermediate/XboxOneGXDK/
+/Intermediate/Switch/
+/Intermediate/PS5/
+/Intermediate/Stadia/
+/Intermediate/Mac/
+
+# ========================================
+# Пользовательские настройки и автогенерация
+# ========================================
+*.user
+*.userprefs
+*.autosave
+/Autosaves/
+/ProjectFiles.bat
+/ProjectFiles.sh
+/ProjectFiles.command
+/GenerateProjectFiles.sh
+/GenerateProjectFiles.command
+/GenerateProjectFiles.bat
+
+# ========================================
+# Файлы бэкапов и временные файлы ОС
+# ========================================
+*.bak
+*.backup
+*.old
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+*~
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# ========================================
+# Плагины (исключаем скомпилированные, сохраняем исходники)
+# ========================================
+/Plugins/*/Binaries/
+/Plugins/*/Intermediate/
+/Plugins/*/Saved/
+/Plugins/*/Manifest*.txt
+
+# ========================================
+# Файлы метаданных (обычно не нужны в репозитории)
+# ========================================
+*.uasset.meta
+*.umap.meta
+*.fbx.meta
+*.wav.meta
+*.png.meta
+*.jpg.meta
