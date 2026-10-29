@@ -12,48 +12,21 @@ class ERROR666_API AMyHero : public ACharacter
 	GENERATED_BODY()
 
 public:
- void MoveForward(float Value);
- void MoveRight(float Value);
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	// Sets default values for this character's properties
+	AMyHero();
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
-	void AMyHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-    Super::SetupPlayerInputComponent(PlayerInputComponent);
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-    PlayerInputComponent->BindAxis("MoveForward", this, &AMyHero::MoveForward);
-    PlayerInputComponent->BindAxis("MoveRight", this, &AMyHero::MoveRight);
-    PlayerInputComponent->BindAxis("Turn", this, &AMyHero::AddControllerYawInput);
-    PlayerInputComponent->BindAxis("LookUp", this, &AMyHero::AddControllerPitchInput);
+	// Объявления функций движения
+	void MoveForward(float Value);
+	void MoveRight(float Value);
 
-    // Для прыжка (добавь эти две строки, если хочешь)
-    PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMyHero::Jump);
-    PlayerInputComponent->BindAction("Jump", IE_Released, this, &AMyHero::StopJumping);
-}
-void AMyHero::MoveForward(float Value)
-{
-    if (Controller && Value != 0.0f)
-    {
-        FRotator YawRotation(0, Controller->GetControlRotation().Yaw, 0);
-        FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);ssss
-        AddMovementInput(Direction, Value);
-    }
-}
-
-void AMyHero::MoveRight(float Value)
-{
-    if (Controller && Value != 0.0f)
-    {
-        FRotator YawRotation(0, Controller->GetControlRotation().Yaw, 0);
-        FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-        AddMovementInput(Direction, Value);
-    }
-}
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 };
